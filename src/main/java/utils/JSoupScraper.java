@@ -1,4 +1,4 @@
-package model;
+package utils;
 /**
  * Classe adibita allo scraping degli URL e delle immagini (sottoformadi mappa Nome-URL)
  * della pagina web passata come String url al costruttore

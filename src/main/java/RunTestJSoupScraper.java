@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-import model.JSoupScraper;
+import utils.JSoupScraper;
 
 public class RunTestJSoupScraper {
 	public static void main(String[] args) {
