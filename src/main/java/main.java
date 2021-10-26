@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class main {
     public static void main(String[] args) {
-        HashMap<String, T> dictionary = new HashMap<String, T>();
+//        HashMap<String, T> dictionary = new HashMap<String, T>();
         System.out.println("Ciao, inserisci una URL valida:");
 
         // 1) Check URL
