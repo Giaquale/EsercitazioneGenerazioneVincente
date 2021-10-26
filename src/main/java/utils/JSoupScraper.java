@@ -36,10 +36,10 @@ public class JSoupScraper {
 	 * Il costruttore riceve come parametro l'URL sottoforma di String
 	 * ed effettua lo scraping di URL e mappa immagini
 	 */
-	public JSoupScraper(final String validateUrl) throws InvalidParameterException, IOException {
-		if (validateUrl != null && !validateUrl.isBlank()) {
+	public JSoupScraper(final String validatedUrl) throws InvalidParameterException, IOException {
+		if (validatedUrl != null && !validatedUrl.isBlank()) {
 			//Salva nel campo l'url
-			this.urlToScrap = validateUrl;
+			this.urlToScrap = validatedUrl;
 			//Preleva il DOM e lo salvo nel campo
 			this.document = Jsoup.connect(urlToScrap).get();
 			//Effettua lo scraping dei link
