@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 import exception.InvalidParameterException;
 import utils.JSoupScraper;
@@ -20,17 +19,9 @@ public class RunTestJSoupScraper {
 			
 			//scraper.rescrape();
 			
-			//links.forEach(System.out::println);
+			links.forEach(System.out::println);
 			
-			//images.forEach((key, value) -> System.out.println("Nome: " + key + " Url: " + value));
-			
-			for(String link : links) {
-				System.out.println(link);
-			}
-			
-			for (Map.Entry<String, String> entry : images.entrySet()) {
-				System.out.println("Nome: " + entry.getKey() + " Url: " + entry.getValue());
-			}
+			images.forEach((key, value) -> System.out.println("Nome: " + key + " Url: " + value));
 			
 		} catch (IOException e) {
 			e.printStackTrace();

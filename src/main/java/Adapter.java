@@ -7,7 +7,7 @@ public class Adapter {
     public void connection(){
 
         try {
-            con = DriverManager.getConnection("jdbc:sqlite:db.db");
+            con = DriverManager.getConnection("jdbc:sqlite:identifier.sqlite");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -18,7 +18,7 @@ public class Adapter {
     public boolean insertLink(String url){
         PreparedStatement ps;
         try {
-            ps = this.con.prepareStatement("insert into linkOttenuti(link) values (?);");
+            ps = this.con.prepareStatement("insert into link(link) values (?);");
             ps.setString(1, url);
         } catch (Exception e) {
             e.printStackTrace();
