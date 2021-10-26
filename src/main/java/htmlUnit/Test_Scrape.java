@@ -9,9 +9,8 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class Test_Scrape 
 {
-
-	public static void main(String args[]) throws Exception {
-
+	public static void main(String args[]) throws Exception 
+	{
 		String url = "https://it.wikipedia.org/wiki/Cowboy_Bebop";
 		WebClient webClient = new WebClient();
 		webClient.getOptions().setUseInsecureSSL(true);
@@ -22,13 +21,21 @@ public class Test_Scrape
 		System.out.println(htmlPage.getTitleText() + "\n");
 
 		//querySelector
-	    DomNode domNode = htmlPage.querySelector("p");
-	    System.out.println(domNode.getVisibleText());
+		try
+		{
+			DomNode domNode = htmlPage.querySelector("p");
+			System.out.println(domNode.getVisibleText());
+		}
+		catch(Exception e)
+		{
+			System.out.println("-Richiesta errata; elemento non trovato-");
+		}
+
 
 		//recupera tutti i link all'interno del sito
 		List<HtmlAnchor> anchors = htmlPage.getAnchors();
 		for (HtmlAnchor anchor : anchors) {
-			System.out.println(anchor.getAttribute("href"));
+			System.out.println(anchor.getAttribute("href") + "\n");
 		}
 	}
 }
