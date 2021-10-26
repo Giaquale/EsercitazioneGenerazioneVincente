@@ -28,7 +28,7 @@ public class RunTestJSoupScraper {
 				System.out.println(link);
 			}
 			
-			for (Map.Entry<String,String> entry : images.entrySet()) {
+			for (Map.Entry<String, String> entry : images.entrySet()) {
 				System.out.println("Nome: " + entry.getKey() + " Url: " + entry.getValue());
 			}
 			
