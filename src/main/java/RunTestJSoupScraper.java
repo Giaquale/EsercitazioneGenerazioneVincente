@@ -17,7 +17,7 @@ public class RunTestJSoupScraper {
 			LinkedList<String> links = scraper.getLinks();
 			HashMap<String, String> images = scraper.getImages();
 			
-			scraper.rescrap();
+			//scraper.rescrape();
 			
 			links.forEach(System.out::println);
 			
