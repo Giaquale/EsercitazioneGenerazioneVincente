@@ -28,14 +28,7 @@ public class main {
 		}
         
         
-        // 2) Avvio ricerca link con inserimento db alla fine
 
-        // 3) Aggiornamento mappa link con inserimento db alla fine
-
-        // 4) Avvio Ricerca mappe con inserimento db alla fine
-
-        // 5)bho
-   
     
     
     
