@@ -137,7 +137,7 @@ public class Adapter {
     public static void main(String[] args) {
         Adapter adapter = new Adapter();
         adapter.connection();
-        adapter.insertLink("wikipedia");
+        adapter.insertLink("test1");
     }
 
 
