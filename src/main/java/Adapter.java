@@ -6,9 +6,8 @@ public class Adapter {
 
     public void connection(){
 
-        String url = "jdbc:sqlite:db.db";
         try {
-            con = DriverManager.getConnection(url);
+            con = DriverManager.getConnection("jdbc:sqlite:db.db");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -16,20 +15,31 @@ public class Adapter {
         }
     }
 
-    public void insertLink(String url){
+    public boolean insertLink(String url){
+        PreparedStatement ps;
         try {
-            String q = "insert into linkOttenuti(link) values (?);";
-            PreparedStatement ps = this.con.prepareStatement(q);
+            ps = this.con.prepareStatement("insert into linkOttenuti(link) values (?);");
             ps.setString(1, url);
-            int n = ps.executeUpdate();
-            if (n > 0){
-                Adapter adapter = new Adapter();
-                adapter.insertLogger("inserimento");
-
-            }
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
+        try {
+            if (ps.executeUpdate()> 0){
+                this.insertLogger("inserimento");
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        try {
+                ps.close();
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
     public void insertImmagini(String url){
         try {
@@ -127,6 +137,7 @@ public class Adapter {
     public static void main(String[] args) {
         Adapter adapter = new Adapter();
         adapter.connection();
+        adapter.insertLink("wikipedia");
     }
 
 
